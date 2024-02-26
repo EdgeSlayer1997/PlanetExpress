@@ -206,7 +206,8 @@ export default Server(() => {
     
         res.send("El registro " + id + " se ha actualizado correctamente");
     });
-    
+
+    //Función en proceso, debido a que se expandirá el proyecto. Contunuar a funciones DELETE.
     /*app.put("/paquetesg/:guiaSeguimiento", (req, res) => {
         const guiaSeguimiento = req.params.guiaSeguimiento;
         const paquete = paquetes.find((paquete) => paquete.guiaSeguimiento === guiaSeguimiento);
