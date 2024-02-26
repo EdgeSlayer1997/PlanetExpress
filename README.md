@@ -1,28 +1,21 @@
 # Planet Express API 
 
--   [Descripción](#descripción)
--   [Descarga del repositiorio](#descarga)
+-   [Descripción](#Descripción)
+-   [Clonación del repositiorio](#Clonación)
 -   [Despliegue del proyecto](#despliegue)
 -   [Funcionalidad](#funcionalidad)
 
-Azle helps you to build secure decentralized/replicated servers in TypeScript or JavaScript on [ICP](https://internetcomputer.org/). The current replication factor is [13-40 times](https://dashboard.internetcomputer.org/subnets).
+## Descripción del proyecto
 
-For more documentation please see [The Azle Book](https://demergent-labs.github.io/azle/).
+El Proyecto Planet Express, es una API (Interfaz de Programación de Aplicaciones) del tipo REST (transferencia de estado representacional), mismo que es desarrollado para una paquetería. De acode al tipo de API, permite administrar un CRUD, permitiendo que las consultas, actualizaciones y eliminaciones se puedan llevar a cabo haciendo uso de datos como nombre, ID, o guía de seguimiento; agregando una mayor funcionalidad y fácil gestión de los paquetes. Además de ofrecer una automatización en generación de ID's y guías de seguimiento, así mismo se ofrecen validaciones que hacen más integra la información. 
+Dicho proyecto, es pensado y creado en facilitar que las empresas de paqueterías nacientes o crecientes faciliten sus procesos de manera sencilla, sin necesidad de tanto papel o procesos de captura en hojas de cálculo. De forma inicial se han propuesto una serie de campos que discriminan al objeto, aunque ellos pueden ser adaptados para las necesidades de cada cliente.
 
-Please remember that Azle is in beta and thus it may have unknown security vulnerabilities due to the following:
+## Clonación del positorio
 
--   Azle is built with various software packages that have not yet reached maturity
--   Azle does not yet have multiple independent security reviews/audits
--   Azle does not yet have many live, successful, continuously operating applications deployed to ICP
-
-## Installation
-
-> Windows is only supported through a Linux virtual environment of some kind, such as [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
-
-On Ubuntu/WSL:
+Dentro de la terminal de Ubuntu (previamente configurada), es necesario correr el siguiente comando para realizar la clonación del repositorio.
 
 ```bash
-sudo apt-get install podman
+git clone 
 ```
 
 On Mac:
