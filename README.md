@@ -7,11 +7,11 @@
 
 ## Descripción del proyecto
 
-El Proyecto Planet Express, es una API (Interfaz de Programación de Aplicaciones) del tipo REST (Transferencia de Estado Representacional), mismo que es desarrollado para una paquetería y que opera de forma local. De acode al tipo de API, permite administrar un CRUD (arónimo de Leer, Crear, Actualizar y Eliminar), permitiendo que las consultas, actualizaciones y eliminaciones se puedan llevar a cabo haciendo uso de datos como nombre, ID, o guía de seguimiento; agregando una mayor funcionalidad y fácil gestión de los paquetes. Además de ofrecer una automatización en generación de ID's y guías de seguimiento, así mismo se ofrecen validaciones que hacen más integra la información. 
+El Proyecto Planet Express, es una API (Interfaz de Programación de Aplicaciones) del tipo REST (Transferencia de Estado Representacional), mismo que es desarrollado para una paquetería y que opera de forma local. De acode al tipo de API, permite administrar un CRUD (acrónimo de Leer, Crear, Actualizar y Eliminar), permitiendo que las consultas, actualizaciones y eliminaciones se puedan llevar a cabo haciendo uso de datos como nombre, ID, o guía de seguimiento; agregando una mayor funcionalidad y facilidad de gestión en los paquetes, además de ofrecer automatización en la generación de ID's y guías de seguimiento, así mismo se ofrecen validaciones que permiten mantener la integridad de la información. 
 
-Dicho proyecto, es pensado y creado en facilitar que las empresas de paqueterías nacientes o crecientes faciliten sus procesos de manera sencilla, sin necesidad de tanto papel o procesos de captura en hojas de cálculo. De forma inicial se han propuesto una serie de campos que describen al objeto, aunque ellos pueden ser adaptados para las necesidades de cada cliente.
+Dicho proyecto, es pensado y creado en facilitar que las empresas de paqueterías nacientes o crecientes faciliten sus procesos de manera sencilla, disminuyendo el papeleo o procesos de captura en hojas de cálculo. De manera inicial se han propuesto una serie de campos que describen al objeto, mismos que pueden ser adaptados a las necesidades del cliente.
 
-De forma futura se podrá integrar con alguna Base de Datos y frontend para complementarla y ofrecer más posiblidades a las paqueterías.
+La escalabilidad permititirá de ser necesario una futura integración a base de datos y desarrollo de frontend para complementarla, ofreciendo así más posiblidades a las paqueterías.
 
 ## Clonación del repositorio
 
@@ -38,9 +38,9 @@ En seguida se debe iniciar el entorno de ejecución local en segundo plano, de e
 dfx start --background
 ```
 
-Posteriormente se deben crear los canister para el proyecto, mismos que serán usados para hacer uso de las rutas. El comando presentado, hace que no sea necesario tener que hacer uso del dfx deploy cada que el código sea actualizado, ello en el caso del desarrollo.
+Posteriormente se deben crear los canister para el proyecto, mismos que serán usados para hacer uso de las rutas. El comando presentado, hace que no sea necesario tener que hacer uso del dfx deploy cada que el código sea actualizado, esto en el caso del desarrollo.
 ```bash
-AZLE_AUTORELOAD= dfx deploy
+AZLE_AUTORELOAD=true dfx deploy
 ```
 
 ## Funcionalidad
@@ -50,7 +50,7 @@ Cabe destacar que esta API almacena datos de manera local, dentro de un arreglo 
 
 Las rutas se construyen por el primer canister arrojado con el último comando que fue corrido, mismo que tiene la siguiente estructura.
 ```bash
-http://canisterID.localhost:4943
+http://canisterID.localhost:localPORT
 ```
 Nota: Es recomendable que se use Postman para hacer uso de la API.
 
@@ -72,7 +72,7 @@ Las altas de información ayudan a crear la información correspondiente a un nu
 
 Las altas de información son realizadas mediante el metódo POST, con la siguiente ruta:
 ```bash
-http://canisterID.localhost:4943/paquetes
+http://canisterID.localhost:localPORT/paquetes
 ```
 Para que estas sean llevadas correctamente es necesario enviar los datos atráves del body, en un raw con formato JSON (parámetros configurables en el entorno de postman). Dicha información deberá seguir el siguiente formato:
 
@@ -80,7 +80,7 @@ Para que estas sean llevadas correctamente es necesario enviar los datos atráve
 {
     "nombre": "Flor",
     "apellidos": "Zamorano",
-    "partida": "Calle Fracisco I Madreo No. 100, Ciudad de Aguascalientes, Aguascalientes, Aguascalientes",
+    "partida": "Calle Fracisco I Madero No. 100, Ciudad de Aguascalientes, Aguascalientes, Aguascalientes",
     "destino": "Calle Juárez No. 15, La Labor, Calvillo, Aguascalientes",
     "tipo": "Nacional",
     "peso": 55,
@@ -107,28 +107,28 @@ Nota: En nunguna de ellas es necesario hacer envío de información atráves del
 
 Las consultas generales arrojan como resultado toda la información almacenada al estar haciendo uso de la API, su ruta es la siguiente:
 ```bash
-http://canisterID.localhost:4943/paquetes
+http://canisterID.localhost:localPORT/paquetes
 ```
 
 #### Consultas por ID
 
 Las consultas por ID arrojan como resultado la información del paquete que coincida con el ID especificado en la ruta correspondiente, mostrandose a continuación:
 ```bash
-http://canisterID.localhost:4943/paquetes/:id
+http://canisterID.localhost:localPORT/paquetes/:id
 ```
 
 #### Consultas por guía de seguimiento
 
 Las consultas por guia de segumiento devuelven la información del paquete que tenga la guía indicada en la ruta.
 ```bash
-http://canisterID.localhost:4943/paquetesg/:guiaSefuimiento
+http://canisterID.localhost:localPORT/paquetesg/:guiaSefuimiento
 ```
 
 #### Consultas por nombre
 
 Las consultas por nombre devuelven los datos de todos aquellos paquetes que coincidan con el nombre indicado en la ruta correspondiente, misma que es la siguiente:
 ```bash
-http://canisterID.localhost:4943/paquetesn/:nombre
+http://canisterID.localhost:localPORT/paquetesn/:nombre
 ```
 
 ### Cambios de información
@@ -159,12 +159,12 @@ Las modificaciones pueden ser realizadas especificando en su ruta el ID o guia d
 - Ruta para actualización por id:
 
 ```bash
-http://avqkn-guaaa-aaaaa-qaaea-cai.localhost:4943/paquetes/:id
+http://avqkn-guaaa-aaaaa-qaaea-cai.localhost:localPORT/paquetes/:id
 ```
 - Ruta para actualización por guía de seguimiento:
 
 ```bash
-http://avqkn-guaaa-aaaaa-qaaea-cai.localhost:4943/paquetesg/:guiaSeguimiento
+http://avqkn-guaaa-aaaaa-qaaea-cai.localhost:localPORT/paquetesg/:guiaSeguimiento
 ```
 
 ### Bajas de información
@@ -176,17 +176,17 @@ Al poder hacer eliminaciones mediante el ID, guía de seguimiento o nombre, es n
 
 ```bash
 
-http://canisterID.localhost:4943/paquetes/:id
+http://canisterID.localhost:localPORT/paquetes/:id
 ```
 - Ruta para eliminación por guía de seguimiento:
 
 ```bash
-http://canisterID.localhost:4943/paquetesg/:guiaSeguimiento
+http://canisterID.localhost:localPORT/paquetesg/:guiaSeguimiento
 ```
 - Ruta para eliminación por nombre:
 
 ```bash
-http://canisterID.localhost:4943/paquetesn/:nombre
+http://canisterID.localhost:localPORT/paquetesn/:nombre
 ```
 
 
