@@ -207,7 +207,7 @@ export default Server(() => {
         res.send("El registro " + id + " se ha actualizado correctamente");
     });
     
-    app.put("/paquetesg/:guiaSeguimiento", (req, res) => {
+    /*app.put("/paquetesg/:guiaSeguimiento", (req, res) => {
         const guiaSeguimiento = req.params.guiaSeguimiento;
         const paquete = paquetes.find((paquete) => paquete.guiaSeguimiento === guiaSeguimiento);
     
@@ -258,7 +258,7 @@ export default Server(() => {
         paquetes = paquetes.map((b) => b.id === updatedPaquete.guiaSeguimiento ? updatedPaquete : b);
     
         res.send("El registro con la Guía de seguimiento" + guiaSeguimiento + " se ha actualizado correctamente");
-    });
+    });*/
 
     app.delete("/paquetes/:id", (req, res) => {
         if (paquetes.length === 0) {
