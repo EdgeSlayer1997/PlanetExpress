@@ -1,6 +1,6 @@
 # Planet Express API 
 
--   [Descripción](#Descripción)
+-   [Descripción](#Descripción del proyecto)
 -   [Clonación del repositiorio](#Clonación)
 -   [Despliegue del proyecto](#despliegue)
 -   [Funcionalidad](#funcionalidad)
@@ -15,7 +15,7 @@ Dicho proyecto, es pensado y creado en facilitar que las empresas de paquetería
 Dentro de la terminal de Ubuntu (previamente configurada), es necesario correr el siguiente comando para realizar la clonación del repositorio.
 
 ```bash
-git clone 
+git clone https://github.com/EdgeSlayer1997/PlanetExpress.git
 ```
 
 On Mac:
